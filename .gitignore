@@ -1,0 +1,2 @@
+# Credenciales reales de la base de datos: NUNCA se suben al repositorio
+config/db_config.php
