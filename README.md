@@ -71,5 +71,5 @@ reales en `config/db_config.php`, que excluí del repositorio con
 
 **d) Enlace del repositorio de GitHub y link del CRUD funcionando:**
 
-- Repositorio: `<pega aquí el link de tu repo TUSINICIALESact2_t4>`
-- CRUD en el VPS: `http://IP_DEL_VPS/TUSINICIALESact2t4/`
+- Repositorio: ``
+- CRUD en el VPS: `http://IP_DEL_VPS/TUSINICIALESact2t4/](http://187.127.254.39/EMMLact2t4/`
