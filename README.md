@@ -20,8 +20,8 @@ con mysqli, e interfaz con Bootstrap 5.
 ```
 config/
   Conexion.php            -> conexion a MySQL con mysqli
-  db_config.example.php   -> plantilla de credenciales (si va a github)
-  db_config.php           -> credenciales reales (no va a github)
+  db_config.example.php   -> plantilla de credenciales
+  db_config.php           -> credenciales reales
 modelo/
   ModeloDestino.php        -> INSERT, SELECT, UPDATE, DELETE
 controlador/
@@ -41,35 +41,3 @@ database.sql  -> crea la base de datos y la tabla
    ahí las credenciales reales.
 3. Subir el proyecto a `/TUSINICIALESact2t4/` en el VPS.
 4. Abrir `http://IP_DEL_VPS/TUSINICIALESact2t4/`
-
-## Respuestas al cuestionario
-
-**a) ¿Qué significa CRUD y qué operación corresponde a cada letra?**
-
-CRUD = Create, Read, Update, Delete (Crear, Leer, Actualizar, Eliminar).
-En SQL: Create = INSERT, Read = SELECT, Update = UPDATE, Delete = DELETE.
-
-**b) ¿Qué entidad elegiste y por qué? Enlista sus campos.**
-
-Elegí Destinos de viaje porque estoy trabajando en un proyecto de una app
-de viajes (PlanGo) en otras actividades y quise mantener el mismo tema.
-Campos: id_destino, nombre, pais, precio, duracion_dias, descripcion,
-imagen.
-
-**c) ¿Qué función de PHP usaste para conectarte a la base de datos y por qué es importante no dejar las credenciales visibles?**
-
-Usé mysqli, con conexiones orientadas a objetos (`new mysqli(...)`) y
-sentencias preparadas (`prepare` / `bind_param`) para evitar inyección
-SQL. No hay que dejar las credenciales (usuario y contraseña de MySQL)
-visibles en el código que se sube a GitHub porque cualquiera que vea el
-repositorio podría usarlas para entrar directamente a la base de datos
-del servidor y leer, modificar o borrar la información, o usar ese
-acceso para meterse al resto del VPS. Por eso separé las credenciales
-reales en `config/db_config.php`, que excluí del repositorio con
-`.gitignore`, y dejé solo una plantilla de ejemplo sin datos reales
-(`db_config.example.php`).
-
-**d) Enlace del repositorio de GitHub y link del CRUD funcionando:**
-
-- Repositorio: `https://github.com/EduardoManuelMartinezLopez/EMMLact2_t4`
-- CRUD en el VPS: `http://187.127.254.39/EMMLact2t4/`
